@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Carousel from './Carousel';
-import Navbar from './Navbar';
+// import { Link } from 'react-router-dom';
+// import Carousel from './Carousel';
+// import Navbar from './Navbar';
 import '../App.css'
 export default function Cards({ addToCart }) {
     // Use state to store the fetched products
