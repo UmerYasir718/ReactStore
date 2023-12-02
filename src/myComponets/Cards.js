@@ -6,8 +6,8 @@ import '../App.css'
 export default function Cards({ addToCart }) {
     // Use state to store the fetched products
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState()
-    let i = 0;
+    // const [cart, setCart] = useState()
+    // let i = 0;
     useEffect(() => {
         // Fetch products when the component mounts
         fetch('https://fakestoreapi.com/products/')
@@ -22,7 +22,7 @@ export default function Cards({ addToCart }) {
     }, []); // Empty dependency array to fetch data only once
   const cartEntry = async () =>{
     i++
-    setCart(i);
+    // setCart(i);
     addToCart();
   }
     return (
