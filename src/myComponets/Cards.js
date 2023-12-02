@@ -21,7 +21,7 @@ export default function Cards({ addToCart }) {
             });
     }, []); // Empty dependency array to fetch data only once
   const cartEntry = async () =>{
-    i++
+    // i++
     // setCart(i);
     addToCart();
   }
