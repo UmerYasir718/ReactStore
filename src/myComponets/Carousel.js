@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 // import logo from '../logo.svg'
 import '../App.css';
 export default function Carousel() {
