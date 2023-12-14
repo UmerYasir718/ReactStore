@@ -5,7 +5,7 @@ import "../App.css";
 import StateContext from "./StateContext";
 export default function Home() {
   const [cate, setcate] = useState([]);
-  const { cart, setCart } = useContext(StateContext);
+  const { cart } = useContext(StateContext);
   const categories = async () => {
     const category = await fetch(
       "https://fakestoreapi.com/products/categories"
@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     categories();
   }, []);
-  const value = useContext(StateContext);
+  // const value = useContext(StateContext);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark Navbar container fixed-top ">

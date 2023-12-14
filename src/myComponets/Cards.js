@@ -9,7 +9,7 @@ export default function Cards(props) {
   const [products, setProducts] = useState([]);
   // const [cart, setCart] = useContext(StateContext);
 
-  let i = 0;
+  // let i = 0;
   useEffect(() => {
     // Fetch products when the component mounts
     fetch("https://fakestoreapi.com/products/")
