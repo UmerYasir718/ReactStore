@@ -74,12 +74,12 @@ export default function Home() {
                     {cate.map((items) => (
                       <>
                         <li>
-                          <Link className="dropdown-item text-dark">
+                          <Link className="dropdown-item text-light">
                             {items.toUpperCase()}
                           </Link>
                         </li>
                         <li>
-                          <hr className="dropdown-divider text-dark" />
+                          <hr className="border border-light border-1 opacity-100" />
                         </li>
                       </>
                     ))}
@@ -138,10 +138,10 @@ export default function Home() {
 
                 <thead>
                   <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Price</th>
+                    <th className="fs-3" scope="col">ID</th>
+                    <th className="fs-3" scope="col">Picture</th>
+                    <th className="fs-3" scope="col">Name</th>
+                    <th className="fs-3" scope="col">Price</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -154,8 +154,8 @@ export default function Home() {
                         alt="..."
                         style={{ width: "50px", height: "50px" }}
                       /> &nbsp;</td>
-                      <td>{product.title}</td>
-                      <td>${product.price}</td>
+                      <td className="fw-bold">{product.title}</td>
+                      <td className="fw-bold fs-5">${product.price}</td>
                     </tr>
                   ))}
                   {/* <tr>
@@ -175,8 +175,10 @@ export default function Home() {
               >
                 Back to Store
               </button>
-              <button type="button" className="btn btn-primary">
-                Check Out
+              <button type="button" className="btn btn-primary" data-bs-dismiss="modal">
+                <Link to="/checkOut" className="text-decoration-none text-light">
+                  Check Out
+                </Link>
               </button>
             </div>
           </div>

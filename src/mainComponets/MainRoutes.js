@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Cart from "../myComponets/Cart";
 import Complete from "../myComponets/Complete";
 import StateContext from "../myComponets/StateContext";
 export default function MainRoutes() {
@@ -14,6 +15,7 @@ export default function MainRoutes() {
         <Router>
           <Routes>
             <Route path="/" element={<Complete />}></Route>
+            <Route path="/checkOut" element={<Cart />}></Route>
             {/* <Route path="/About" element={<About />}>
       </Route>
       <Route path="/MyResume" element={<MyResume />}>
