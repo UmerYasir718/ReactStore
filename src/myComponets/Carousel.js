@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
 // import Navbar from './Navbar'
 // import logo from '../logo.svg'
 import '../App.css';
 export default function Carousel() {
     return (
         <div>
-            <div className='container-fluid'>
+            <div className="alert color my-2 container" role="alert">
+                Check Out the Lastest Products on best Prices
+            </div>
+            {/* <img src="./10.png" alt="" style={{ width: "100%" }} /> */}
+            {/* <div className='container-fluid'>
                 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -35,7 +39,7 @@ export default function Carousel() {
             </div>
             <div className="alert color my-2 container" role="alert">
                 Check Out the Lastest Products on best Prices
-            </div>
+            </div> */}
         </div>
     )
 }

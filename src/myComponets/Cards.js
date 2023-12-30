@@ -1,15 +1,25 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { Link } from 'react-router-dom';
 // import Carousel from './Carousel';
 // import Navbar from './Navbar';
-import StateContext from "./StateContext";
 import "../App.css";
+import StateContext from "./StateContext";
+const generateStars = (rating) => {
+  const stars = [];
+  for (let i = 0; i < Math.floor(rating); i++) {
+    stars.push(
+      // <i key={i} className="fa-solid fa-star">
+      //   &nbsp;
+      // </i>
+      <i key={i} className="bi bi-star-fill">
+        &nbsp;
+      </i>
+    );
+  }
+  return stars;
+};
 export default function Cards(props) {
-  // Use state to store the fetched products
   const [products, setProducts] = useState([]);
-  // const [cart, setCart] = useContext(StateContext);
-
-  // let i = 0;
   useEffect(() => {
     // Fetch products when the component mounts
     fetch("https://fakestoreapi.com/products/")
@@ -22,16 +32,23 @@ export default function Cards(props) {
         console.error("Error fetching products:", error);
       });
   }, []); // Empty dependency array to fetch data only once
-  // const cartEntry = async () => {
-  //   i++;
-  //   setCart(i);
-  //   // addToCart();
-  // };
+  const { setCartValue } = useContext(StateContext);
   const { setCart } = useContext(StateContext);
+  const { setPrice } = useContext(StateContext);
 
-  const cartEntry = () => {
-    setCart((prevCart) => prevCart + 1);
+  const cartEntry = (product) => {
+    setCartValue((prevCartValue) => prevCartValue + 1);
+    setCart((prevCart) => [...prevCart, product]);
+    setPrice((prevPrice) => prevPrice + product.price);
   };
+  // const cartEntry = (product) => {
+  //   setCart((prevCart) => (prevCart ? [...prevCart, product] : [product]));
+  // };
+
+  // useEffect(() => {
+  //   const rating = product.rating.rate;
+  //   for (let i = 0; i < rating; i++) {}
+  // }, [products]);
   return (
     <>
       {/* <StateContext.Provider value={cart}> */}
@@ -60,21 +77,22 @@ export default function Cards(props) {
                 </h4>
                 <h6 className="product-rating">
                   <span class="badge bg-danger ">
-                    {product.rating.rate}
+                    {generateStars(product.rating.rate)}
+                    {/* {product.rating.rate}
                     <i
                       class="fa-solid fa-star"
                       style={{ color: "#ffffff", padding: "3px" }}
-                    ></i>
+                    ></i> */}
                   </span>
                 </h6>
               </div>
               <div className="card-bottom">
                 {/* {props.children} */}
                 <button
-                  className="btncart  fw-bold cart"
+                  className="btncart fw-bold cart"
                   type="button"
                   id={`btn-${product.id}`}
-                  onClick={cartEntry}
+                  onClick={() => cartEntry(product)}
                 >
                   Add to Cart
                 </button>

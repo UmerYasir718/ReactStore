@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-body {
+/* body {
   padding-top: 120px;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -32,30 +32,64 @@ body {
 }
 
 /* -----------------------------------Navbar----------------------------- */
-.Navbar {
+.avbar {
   background-color: #282C34;
   color: white;
   border: 2px white solid;
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
 }
-.nav-link{
-font-size: 22px;
+
+.bg-img {
+  background-image: url("../public/33.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 850px;
+  max-width: 100%;
+  max-height: 850px;
+  /* Adjust the height as needed */
+  position: relative;
 }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 1;
+  /* Ensure the navbar is on top of the background image */
+}
+
+/* Rest of your existing styles for navbar */
+
+.nav-link {
+  font-size: 22px;
+}
+
 .Icon {
   height: 10vmin;
   pointer-events: none;
 }
-.dropdown-menu{
+
+.dropdown-menu {
   background-color: rgb(145, 218, 250);
 }
+
 .btn-search {
   background-color: #61dafb;
 }
-.active{
+
+.active {
   border-bottom: 4px solid yellowgreen;
   font-size: 22px;
 }
+
 /* -----------------------------------Carousel----------------------------- */
 .sliderImg {
   min-width: 100px;
@@ -81,9 +115,11 @@ font-size: 22px;
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
 
 }
-.card-title{
+
+.card-title {
   border-top: 2px solid black;
 }
+
 .card-detail {
   display: flex;
   flex-direction: row;
@@ -103,9 +139,11 @@ font-size: 22px;
   justify-content: center;
   align-content: center;
 }
-.card-img:hover{
+
+.card-img:hover {
   max-width: 350px;
 }
+
 .card-bottom {
   display: flex;
   flex-direction: column;
@@ -126,14 +164,14 @@ font-size: 22px;
 }
 
 /* -----------------------------------Footer----------------------------- */
-.footer{
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 22px;
-background-color: #282C34;
-color: white;
-padding: 3px;
-border: 2px white solid;
-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  background-color: #282C34;
+  color: white;
+  padding: 3px;
+  border: 2px white solid;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
