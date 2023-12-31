@@ -91,7 +91,7 @@ export default function Nav() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-light me-2" type="submit">
+              <button className="btn btn-primary me-2" type="submit">
                 Search
               </button>
             </form>
