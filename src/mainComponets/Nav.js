@@ -96,7 +96,7 @@ export default function Nav() {
               </button>
             </form>
 
-            <div className="nav-item bg-light p-2 rounded  mt-sm-2 ">
+            <div className="nav-item bg-light p-2 rounded  mt-2 ">
               <Link
                 className="nav-link text-dark fw-bold d-flex justify-content-center align-content-center"
                 to="/"
