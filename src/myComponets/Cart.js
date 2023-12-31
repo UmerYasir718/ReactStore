@@ -3,7 +3,7 @@ import Nav from "../mainComponets/Nav";
 import StateContext from "./StateContext";
 export default function Cart() {
   const { cart } = useContext(StateContext);
-  const { cartValue } = useContext(StateContext);
+ // const { cartValue } = useContext(StateContext);
   const { price } = useContext(StateContext);
   useEffect(() => {
     // Add a class to the body tag when the component mounts
