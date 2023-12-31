@@ -21,16 +21,22 @@ const generateStars = (rating) => {
 export default function Cards(props) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    // Fetch products when the component mounts
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((json) => {
+    // Create an async function to use await
+    const fetchData = async () => {
+      try {
+        // Fetch products when the component mounts
+        const response = await fetch("https://fakestoreapi.com/products/");
+        const json = await response.json();
+
         // Store the products in state
         setProducts(json);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching products:", error);
-      });
+      }
+    };
+
+    // Call the async function
+    fetchData();
   }, []); // Empty dependency array to fetch data only once
   const { setCartValue } = useContext(StateContext);
   const { setCart } = useContext(StateContext);
