@@ -213,5 +213,11 @@
   width: 300px;
   height: 100px;
   margin: auto;
+  background-color: rgb(221, 13, 13);
+  color: white;
+}
+
+.totalPrice:hover {
   background-color: #61dafb;
+  color: black;
 }

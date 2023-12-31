@@ -86,19 +86,19 @@ export default function Nav() {
             </ul>
             <form className="d-flex">
               <input
-                className="form-control me-2"
+                className="form-control me-2 p-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-light  me-2" type="submit">
+              <button className="btn btn-light me-2" type="submit">
                 Search
               </button>
             </form>
 
-            <div className="nav-item bg-dark p-2 rounded">
+            <div className="nav-item bg-light p-2 rounded">
               <Link
-                className="nav-link text-light fw-bold d-flex justify-content-center align-content-center"
+                className="nav-link text-dark fw-bold d-flex justify-content-center align-content-center"
                 to="/"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
