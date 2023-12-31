@@ -5,7 +5,7 @@ import logo from "../logo.svg";
 import StateContext from "../myComponets/StateContext";
 export default function Nav() {
   const [cate, setCate] = useState([]);
-  const { cart } = useContext(StateContext);
+  // const { cart } = useContext(StateContext);
   const { cartValue } = useContext(StateContext);
 
   const categories = async () => {

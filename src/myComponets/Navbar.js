@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import Nav from "../mainComponets/Nav";
 import StateContext from "./StateContext";
 export default function Home() {
-  const [cate, setCate] = useState([]);
+  //const [cate, setCate] = useState([]);
   const { cart } = useContext(StateContext);
-  const { cartValue } = useContext(StateContext);
+  // const { cartValue } = useContext(StateContext);
   const { price } = useContext(StateContext);
   const navigate = useNavigate(); // Get the navigate function
 
