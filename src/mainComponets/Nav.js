@@ -84,9 +84,9 @@ export default function Nav() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex">
+            <form className="d-flex justify-content-center align-content-center">
               <input
-                className="form-control me-2 p-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
@@ -96,7 +96,7 @@ export default function Nav() {
               </button>
             </form>
 
-            <div className="nav-item bg-light p-2 rounded">
+            <div className="nav-item bg-light p-2 rounded  mt-sm-2 ">
               <Link
                 className="nav-link text-dark fw-bold d-flex justify-content-center align-content-center"
                 to="/"
