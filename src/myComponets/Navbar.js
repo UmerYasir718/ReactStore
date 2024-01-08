@@ -35,27 +35,38 @@ export default function Home() {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body" >
+            <div className="modal-body">
               <table class="table">
-
                 <thead>
                   <tr>
-                    <th className="fs-3" scope="col">ID</th>
-                    <th className="fs-3" scope="col">Picture</th>
-                    <th className="fs-3" scope="col">Name</th>
-                    <th className="fs-3" scope="col">Price</th>
+                    <th className="fs-3" scope="col">
+                      ID
+                    </th>
+                    <th className="fs-3" scope="col">
+                      Picture
+                    </th>
+                    <th className="fs-3" scope="col">
+                      Name
+                    </th>
+                    <th className="fs-3" scope="col">
+                      Price
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {cart.map((product) => (
                     <tr>
                       <th scope="row">{product.id}</th>
-                      <td> <img
-                        src={product.image}
-                        className=""
-                        alt="..."
-                        style={{ width: "50px", height: "50px" }}
-                      /> &nbsp;</td>
+                      <td>
+                        {" "}
+                        <img
+                          src={product.image}
+                          className=""
+                          alt="..."
+                          style={{ width: "50px", height: "50px" }}
+                        />{" "}
+                        &nbsp;
+                      </td>
                       <td className="fw-bold">{product.title}</td>
                       <td className="fw-bold fs-5">${product.price}</td>
                     </tr>
@@ -67,7 +78,9 @@ export default function Home() {
                   </tr> */}
                 </tbody>
               </table>
-              <h3 className="d-flex justify-content-center align-content-center">Total Price:&nbsp;${price}</h3>
+              <h3 className="d-flex justify-content-center align-content-center">
+                {price > 0 ? `Total Price: ${price}` : "Cart is Empty"}
+              </h3>
             </div>
             <div className="modal-footer">
               <button
@@ -77,7 +90,13 @@ export default function Home() {
               >
                 Back to Store
               </button>
-              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => navigate("/checkOut")}>
+              <button
+                type="button"
+                className={`btn btn-primary ${price > 0 ? "" : "disabled"}`}
+                data-bs-dismiss="modal"
+                // {price > 0 ? "" : disabled}
+                onClick={() => navigate("/checkOut")}
+              >
                 Check Out
               </button>
             </div>

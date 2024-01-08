@@ -5,6 +5,7 @@ import logo from "../logo.svg";
 import StateContext from "../myComponets/StateContext";
 export default function Nav() {
   const [cate, setCate] = useState([]);
+  const [scrolled, setScrolled] = useState(false);
   // const { cart } = useContext(StateContext);
   const { cartValue } = useContext(StateContext);
 
@@ -19,16 +20,37 @@ export default function Nav() {
   useEffect(() => {
     categories();
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark shadow-5-strong Navbar fixed-top">
+      <nav
+        className={`navbar navbar-expand-lg navbar-dark fixed-top Navbar bg-white-md ${
+          scrolled ? "scrolled" : ""
+        }`}
+      >
         <div className="container-fluid">
           <img src={logo} className="App-logo Icon" alt="logo" />
-          <Link className="navbar-brand text-light fw-bold fs-1" to="/">
+          <Link className="navbar-brand fw-bold fs-1" to="/">
             ReactStore
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler text-bg-dark "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -42,7 +64,7 @@ export default function Nav() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
-                  className="nav-link text-light fw-bold"
+                  className="nav-link navLink"
                   aria-current="page"
                   to="/"
                 >
@@ -50,13 +72,13 @@ export default function Nav() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light fw-bold" to="/About">
+                <NavLink className="nav-link  navLink" to="/About">
                   About
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle text-light fw-bold"
+                  className="nav-link dropdown-toggle  navLink"
                   // to="/Categories"
                   id="navbarDropdown"
                   role="button"
@@ -72,7 +94,7 @@ export default function Nav() {
                   {cate.map((items) => (
                     <>
                       <li>
-                        <Link className="dropdown-item text-light">
+                        <Link className="dropdown-item">
                           {items.toUpperCase()}
                         </Link>
                       </li>
@@ -84,7 +106,7 @@ export default function Nav() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex justify-content-center align-content-center">
+            {/* <form className="d-flex justify-content-center align-content-center">
               <input
                 className="form-control me-2"
                 type="search"
@@ -94,11 +116,11 @@ export default function Nav() {
               <button className="btn btn-primary me-2" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
 
-            <div className="nav-item bg-light p-2 rounded  mt-2 ">
+            <div className="nav-item addToCart">
               <Link
-                className="nav-link text-dark fw-bold d-flex justify-content-center align-content-center"
+                className="nav-link addToCartText"
                 to="/"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"

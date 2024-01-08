@@ -32,45 +32,70 @@
 }
 
 /* -----------------------------------Navbar----------------------------- */
-.avbar {
-  background-color: #282C34;
+.navbar {
+  /* background-color: #282C34;
   color: white;
-  border: 2px white solid;
+  border: 2px white solid; */
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px; */
 }
 
 .bg-img {
-  background-image: url("https://blog.mktgessentials.com/hubfs/online-store-small-business-blog.png");
+  background-image: url("https://res.cloudinary.com/dvccsosdc/image/upload/v1704705056/33_s5htcf.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw;
   height: 850px;
   max-width: 100%;
-  max-height: 850px;
-  /* Adjust the height as needed */
+  max-height: 100vw;
   position: relative;
 }
 
-.navbar {
+/* .navbar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;
   box-sizing: border-box;
-  z-index: 1;
-  /* Ensure the navbar is on top of the background image */
+  z-index: 1000;
+} */
+
+.navbar {
+  box-sizing: border-box;
+  left: 0;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
 }
 
-/* Rest of your existing styles for navbar */
-
-.nav-link {
+.navLink {
   font-size: 22px;
+  color: white;
+  font-weight: bold;
 }
+
+.addToCart {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.addToCartText {
+  color: black;
+  padding: 5px;
+  font-size: 20px;
+}
+
 
 .Icon {
   height: 10vmin;
@@ -88,6 +113,60 @@
 .active {
   border-bottom: 4px solid yellowgreen;
   font-size: 22px;
+}
+
+
+
+.navbar.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  .navbar-brand {
+    color: black;
+  }
+
+  .nav-link {
+    color: black;
+  }
+
+  .addToCart {
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .addToCartText {
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 998px) {
+  .navbar {
+    background-color: white;
+    color: black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .navbar-brand {
+    color: black;
+  }
+
+
+  .nav-link {
+    color: black;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: black;
+  }
+
+
 }
 
 /* -----------------------------------Carousel----------------------------- */
