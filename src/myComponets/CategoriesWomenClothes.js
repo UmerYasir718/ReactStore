@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-// import { Link } from 'react-router-dom';
-// import Carousel from './Carousel';
-// import Navbar from './Navbar';
 import "../App.css";
+import Navbar from "./Navbar";
 import StateContext from "./StateContext";
 const generateStars = (rating) => {
   const stars = [];
@@ -20,12 +18,17 @@ const generateStars = (rating) => {
 };
 export default function CategoriesWomenClothes(props) {
   const [products, setProducts] = useState([]);
+  const { setCartValue } = useContext(StateContext);
+  const { setCart } = useContext(StateContext);
+  const { setPrice } = useContext(StateContext);
   useEffect(() => {
     // Create an async function to use await
     const fetchData = async () => {
       try {
         // Fetch products when the component mounts
-        const response = await fetch(`https://fakestoreapi.com/products/category/women's clothing`);
+        const response = await fetch(
+          `https://fakestoreapi.com/products/category/women's clothing`
+        );
         const json = await response.json();
 
         // Store the products in state
@@ -38,26 +41,15 @@ export default function CategoriesWomenClothes(props) {
     // Call the async function
     fetchData();
   }, []); // Empty dependency array to fetch data only once
-  const { setCartValue } = useContext(StateContext);
-  const { setCart } = useContext(StateContext);
-  const { setPrice } = useContext(StateContext);
 
   const cartEntry = (product) => {
     setCartValue((prevCartValue) => prevCartValue + 1);
     setCart((prevCart) => [...prevCart, product]);
     setPrice((prevPrice) => prevPrice + product.price);
   };
-  // const cartEntry = (product) => {
-  //   setCart((prevCart) => (prevCart ? [...prevCart, product] : [product]));
-  // };
-
-  // useEffect(() => {
-  //   const rating = product.rating.rate;
-  //   for (let i = 0; i < rating; i++) {}
-  // }, [products]);
   return (
     <>
-      {/* <StateContext.Provider value={cart}> */}
+      <Navbar />
       <div className="row my-4 container-fluid">
         {products.map((product) => (
           <div

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
+import Footer from "../mainComponets/Footer";
 import Cards from "./Cards";
 import Carousel from "./Carousel";
-import Footer from "./Footer";
 import Navbar from "./Navbar";
 import StateContext from "./StateContext";
 export default function Complete() {
@@ -39,10 +39,10 @@ export default function Complete() {
       <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
         {isVisible && (
           <i
-            className="bi bi-arrow-up-square-fill text-light bg-danger scroll-to-top-button fs-2 p-2 rounded fw-bold  "
+            className="bi bi-arrow-up-square-fill scroll-to-top-button "
             onClick={scrollToTop}
           >
-            <span className="badge bg-danger p-2 fw-medium fst-normal">
+            <span className="badge  cartValueScroll-to-top-button">
               {cartValue}
             </span>
           </i>

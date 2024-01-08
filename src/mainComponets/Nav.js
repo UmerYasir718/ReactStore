@@ -94,7 +94,7 @@ export default function Nav() {
                   {cate.map((items) => (
                     <>
                       <li>
-                        <Link className="dropdown-item">
+                        <Link className="dropdown-item" to={items}>
                           {items.toUpperCase()}
                         </Link>
                       </li>

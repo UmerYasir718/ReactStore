@@ -1,3 +1,8 @@
+/* body {
+  background: rgb(247, 135, 62);
+  background: linear-gradient(90deg, rgba(247, 135, 62, 1) 0%, rgba(242, 93, 74, 1) 100%);
+} */
+
 .App {
   text-align: center;
 }
@@ -32,15 +37,6 @@
 }
 
 /* -----------------------------------Navbar----------------------------- */
-.navbar {
-  /* background-color: #282C34;
-  color: white;
-  border: 2px white solid; */
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
-  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 10px; */
-}
-
 .bg-img {
   background-image: url("https://res.cloudinary.com/dvccsosdc/image/upload/v1704705056/33_s5htcf.png");
   background-size: cover;
@@ -53,15 +49,6 @@
   position: relative;
 }
 
-/* .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px;
-  box-sizing: border-box;
-  z-index: 1000;
-} */
 
 .navbar {
   box-sizing: border-box;
@@ -118,9 +105,12 @@
 
 
 .navbar.scrolled {
-  background-color: white;
   color: black;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+  /* background: rgb(27, 18, 155);
+  background: linear-gradient(90deg, rgba(27, 18, 155, 1) 0%, rgba(8, 154, 235, 1) 100%); */
 
   .navbar-brand {
     color: black;
@@ -189,10 +179,12 @@
   border: 3px solid black;
   padding: 5px;
   width: 350px;
-  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .card-title {
@@ -299,4 +291,22 @@
 .totalPrice:hover {
   background-color: #61dafb;
   color: black;
+}
+
+/* -----------------------------------scroll-to-top-button----------------------------- */
+.scroll-to-top-button {
+  /* fs-2 p-2 rounded fw-bold */
+  font-size: 22px;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #0303eb;
+  color: white;
+}
+
+.cartValueScroll-to-top-button {
+  font-size: larger;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
 }
