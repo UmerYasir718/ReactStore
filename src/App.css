@@ -209,7 +209,7 @@
 }
 
 .card-img {
-  max-width: 300px;
+  max-width: 350px;
   min-height: 300px;
   max-height: 300px;
   border-radius: 10px;
@@ -289,8 +289,8 @@
   align-content: center;
   border: 2px solid black;
   padding: 0px, 10px;
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 50px;
   margin: auto;
   background-color: rgb(221, 13, 13);
   color: white;
